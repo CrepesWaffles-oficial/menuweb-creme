@@ -1,713 +1,1160 @@
-<!DOCTYPE html> <!-- Indica que el documento utiliza HTML5 -->
-<html lang="es"> <!-- Define el idioma principal de la página -->
-<head> <!-- Inicio de la configuración de la página -->
-<meta charset="UTF-8"> <!-- Permite usar caracteres especiales como ñ y tildes -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se adapte a celulares y tablets -->
-<title>Cremé</title> <!-- Nombre que aparece en la pestaña del navegador -->
-<link rel="icon" type="image/png" href="logonuevo-creme.jpg"> <!-- Logo que aparece en la pestaña -->
-<link rel="stylesheet" href="style.css"> <!-- Conecta el archivo CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Biblioteca de íconos Font Awesome -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet"> <!-- Fuente personalizada de Google Fonts -->
-</head> <!-- Fin de la configuración -->
-<body> <!-- Inicio del contenido visible -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cremé</title>
+<link rel="icon" type="image/png" href="logonuevo-creme.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
 
 <!-- MENU -->
-
-<button class="menu-btn" onclick="abrirMenu()"> <!-- Botón que abre el menú lateral -->
-<i class="fas fa-bars"></i> <!-- Ícono de menú (tres líneas) -->
-</button> <!-- Fin del botón -->
-<div id="menuLateral" class="menu-lateral"> <!-- Contenedor del menú lateral -->
-<span class="cerrar" onclick="cerrarMenu()">×</span> <!-- Botón para cerrar el menú -->
-<a onclick="abrirModal('quienes')">Quiénes Somos</a> <!-- Abre la ventana "Quiénes Somos" -->
-<a onclick="abrirModal('horarios')">Horarios</a> <!-- Abre la ventana de horarios -->
-<a onclick="abrirModal('pagos')">Formas de Pago</a> <!-- Abre la ventana de métodos de pago -->
-<a onclick="abrirModal('ubicacion')">Ubicación</a> <!-- Abre la ventana de ubicación -->
-<a onclick="abrirModal('redes')">Redes Sociales</a> <!-- Abre la ventana de redes sociales -->
-</div> <!-- Fin del menú lateral -->
-
-<div id="modal" class="modal"> <!-- Contenedor principal de la ventana emergente (modal) -->
-    <div class="contenido-modal"> <!-- Caja que contiene el contenido que se mostrará dentro del modal -->
-    <span class="cerrar-modal" onclick="cerrarModal()">×</span>
-    <!-- Botón para cerrar la ventana modal al hacer clic -->
-    <h2 id="tituloModal"></h2>
-    <!-- Título del modal, se completa dinámicamente con JavaScript -->
-    <p id="textoModal"></p>
-    <!-- Texto o contenido del modal, se completa dinámicamente con JavaScript -->
-    </div> <!-- Fin del contenido del modal -->
-</div> <!-- Fin de la ventana modal -->
-<!-- PORTADA -->
-<header class="hero">
-<!-- Encabezado principal o portada de la página -->
-
-<!-- Muestra el logotipo de Cremé en la portada -->
-<h1></h1>
-<!-- Título principal de la página -->
-<p></p>
-<!-- Eslogan o frase representativa del emprendimiento -->
-</header>
-<!-- Fin de la portada -->
-
-<!-- Categorías -->
-<div class="categories"> <!-- Contenedor botones -->
-    <button onclick="location.href='#crepes-dulce'">Crepes Dulces</button> <!-- Botón crepes -->
-    <button onclick="location.href='#crepes-salado'">Crepes Salados</button> <!-- Botón crepes -->
-    <button onclick="location.href='#waffles-dulce'">Waffles Dulces</button> <!-- Botón waffles -->
-    <button onclick="location.href='#waffles-salado'">Waffles Salados</button> <!-- Botón waffles -->
-    <button onclick="location.href='#especial'">Menú Especial</button> <!-- Botón menú especial -->
-    <button onclick="location.href='#bebidas'">Bebidas</button> <!-- Botón bebidas -->
-    <button onclick="location.href='#sinlactosa'">Sin Lactosa</button> <!-- Botón bebidas sin lactosa -->
-    <button onclick="location.href='#combos'">Combos</button> <!-- Botón combos -->
-    <button onclick="location.href='#personalizado'">Personalizar Pedido</button> <!-- Botón combos -->
+<button class="menu-btn" onclick="abrirMenu()">
+<i class="fas fa-bars"></i>
+</button>
+<div id="menuLateral" class="menu-lateral">
+<span class="cerrar" onclick="cerrarMenu()">×</span>
+<a onclick="abrirModal('quienes')">Quiénes Somos</a>
+<a onclick="abrirModal('horarios')">Horarios</a>
+<a onclick="abrirModal('pagos')">Formas de Pago</a>
+<a onclick="abrirModal('ubicacion')">Ubicación</a>
+<a onclick="abrirModal('redes')">Redes Sociales</a>
+<a onclick="abrirModal('terminos')">Términos y Condiciones</a>
+<a onclick="abrirModal('derechos')">Derechos del Consumidor</a>
 </div>
 
-<!-- CREPES -->
+<div id="modal" class="modal">
+    <div class="contenido-modal">
+    <span class="cerrar-modal" onclick="cerrarModal()">×</span>
+    <h2 id="tituloModal"></h2>
+    <p id="textoModal"></p>
+    </div>
+</div>
 
-<section class="menu-section" id="crepes-dulce"> <!-- Crea una sección para mostrar los crepes dulces -->
-    <h2>Crepes Dulces</h2> <!-- Título principal de la sección -->
-    <div class="menu-grid"> <!-- Contenedor que organiza las tarjetas de productos -->
-    <div class="card"> <!-- Tarjeta individual de un producto -->
-    <img src="crepedulce1.jpg" alt=""> <!-- Imagen del producto -->
-    <div class="card-content"> <!-- Contenedor de la información del producto -->
-    <h3>Crepe Nutella</h3> <!-- Nombre del producto -->
-    <p>Nutella, banana y frutillas.</p> <!-- Descripción de los ingredientes del producto -->
-    <div class="price">$7.500</div> <!-- Precio del producto -->
-    <button class="btn" onclick="agregarCarrito('Crepe Nutella',7500)"> <!-- Botón que agrega el producto al carrito y envía el nombre y precio a JavaScript -->
-    Agregar <!-- Texto visible del botón --> 
-</button> <!-- Fin del botón -->
-</div> <!-- Fin del contenido de la tarjeta -->
-</div> <!-- Fin de la tarjeta del producto -->
-        <div class="card">
-            <img src="crepedulce2.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Oreo</h3>
-                <p>Oreo, crema y chocolate.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Oreo',7500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="crepedulce3.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Frutal</h3>
-                <p>Frutillas, banana y crema.</p>
-                <div class="price">$7.000</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Frutal',7000)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="crepedulce4.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Nieve</h3>
-                <p>Nueces,dulce de leche,galletas y azúcar impalpable.</p>
-                <div class="price">$8.000</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Nieve',8000)"> Agregar </button>
-            </div>
-        </div>
+<!-- PORTADA -->
+<header class="hero">
+<h1></h1>
+<p></p>
+</header>
+
+<!-- BARRA DE BÚSQUEDA INTERACTIVA -->
+<section class="search-container-section">
+    <div class="search-bar-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="inputBusqueda" placeholder="Encuentra tu antojo favorito en Cremé..." onkeyup="filtrarBusqueda(event)">
+    </div>
+    <div id="resultadoBusqueda" class="resultado-busqueda-flotante" style="display: none;"></div>
+</section>
+
+<!-- ACCESOS PRINCIPALES DEL MENÚ -->
+<section class="home-categories">
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaCrepes'); return false;">
+        <span class="category-icon">🥞</span>
+        <h2>Crepes</h2>
+    </a>
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaWaffles'); return false;"> 
+        <span class="category-icon">🧇</span>
+        <h2>Waffles</h2>
+    </a>
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaBebidas'); return false;">
+        <span class="category-icon">🥤</span>
+        <h2>Bebidas</h2>
+    </a>
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaEspecial'); return false;">
+        <span class="category-icon">🌿</span>
+        <h2>Menú especial</h2>
+    </a>
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaSinLactosa'); return false;">
+        <span class="category-icon">🐮</span>
+        <h2>Bebidas sin lactosa</h2>
+    </a>
+    <a href="#" class="home-category-card" onclick="abrirVentana('ventanaCombos'); return false;">
+        <span class="category-icon">♡</span>
+        <h2>Combos</h2>
+    </a>
+</section>
+
+<!-- BANNER / TARJETAS DE PERSONALIZACIÓN -->
+<section class="personalizar-section">
+    <div class="card-personalizar" onclick="abrirModalPersonalizar('modalCrepe')">
+        <span class="emoji-personalizar">🥞</span>
+        <h3>Personalizá tu Crepe</h3>
+        <p>Elegí tu base, tus ingredientes favoritos y armalo a tu gusto</p>
+    </div>
+    <div class="card-personalizar" onclick="abrirModalPersonalizar('modalWaffle')">
+        <span class="emoji-personalizar">🧇</span>
+        <h3>Personalizá tu Waffle</h3>
+        <p>Elegí tu base, tus ingredientes favoritos y armalo a tu gusto</p>
     </div>
 </section>
 
+<!-- MODAL PERSONALIZAR CREPE -->
+<div id="modalCrepe" class="modal-personalizar">
+    <div class="modal-contenido-personalizar">
+        <span class="cerrar-modal" onclick="cerrarModalPersonalizar('modalCrepe')">&times;</span>
+        <h2>🥞 Personalizá tu Crepe</h2>
+        <div class="opciones-personalizar">
+            <h3>Elegí tu base</h3>
+            <label><input type="radio" name="baseCrepeModal" value="dulce"> Crepe Dulce</label>
+            <label><input type="radio" name="baseCrepeModal" value="salado"> Crepe Salado</label>
+            
+            <h3>Ingredientes Dulces</h3>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="4000"> Nutella (+$4000)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="3000"> Oreo (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="2500"> Banana (+$2500)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="3000"> Frutilla (+$3000)</label>
+            
+            <h3>Ingredientes Salados</h3>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="3000"> Jamón (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="3500"> Queso (+$3500)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="2500"> Rúcula (+$2500)</label>
+            <label><input type="checkbox" class="ingrediente-crepe-modal" value="3000"> Tomate Cherry (+$3000)</label>
 
-<section class="menu-section" id="crepes-salado"> <!-- Sección crepes -->
-    <h2>Crepes Salados</h2> <!-- Título sección -->
-    <div class="menu-grid">
-        <div class="card">
-            <img src="crepesalado1.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Toscana.</h3>
-                <p>Rúcula, pollo y queso crema.</p>
-                <div class="price">$8.000</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Toscana',8000)"> Agregar </button>
+            <div class="precio-total-modal">
+                <h3>Precio estimado: $<span id="totalCrepeModal">0</span></h3>
+                <button class="btn-agregar-carrito" onclick="crearPedidoCrepeModal()">Agregar al Carrito</button>
             </div>
+            <div id="resumenCrepeModal"></div>
         </div>
-        <div class="card">
-            <img src="crepesalado2.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Rústico</h3>
-                <p>Calabreza, panceta, carne mechada y queso.</p>
-                <div class="price">$9.500</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Rustico',9500)"> Agregar </button>
+    </div>
+</div>
+
+<!-- MODAL PERSONALIZAR WAFFLE -->
+<div id="modalWaffle" class="modal-personalizar">
+    <div class="modal-contenido-personalizar">
+        <span class="cerrar-modal" onclick="cerrarModalPersonalizar('modalWaffle')">&times;</span>
+        <h2>🧇 Personalizá tu Waffle</h2>
+        <div class="opciones-personalizar">
+            <h3>Elegí tu base</h3>
+            <label><input type="radio" name="baseWaffleModal" value="dulce"> Waffle Dulce</label>
+            <label><input type="radio" name="baseWaffleModal" value="salado"> Waffle Salado</label>
+            
+            <h3>Ingredientes Dulces</h3>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="4000"> Nutella (+$4000)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3000"> Oreo (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="2500"> Banana (+$2500)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3000"> Frutilla (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="5000"> Kinder Bueno (+$5000)</label>
+            
+            <h3>Ingredientes Salados</h3>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3000"> Jamón (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3500"> Queso (+$3500)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3000"> Panceta (+$3000)</label>
+            <label><input type="checkbox" class="ingrediente-waffle-modal" value="3000"> Pollo (+$3000)</label>
+            
+            <div class="precio-total-modal">
+                <h3>Precio estimado: $<span id="totalWaffleModal">0</span></h3>
+                <button class="btn-agregar-carrito" onclick="crearPedidoWaffleModal()">Agregar al Carrito</button>
             </div>
+            <div id="resumenWaffleModal"></div>
         </div>
-        <div class="card">
-            <img src="crepesalado3.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Clásico.</h3>
-                <p>Jamón y Queso.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Clásico',7500)"> Agregar </button>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE CREPES -->
+<div id="ventanaCrepes" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaCrepes')" aria-label="Cerrar">&times;</button>
+        <h2>Nuestros Crepes</h2>
+        <p class="subtitulo-modal">Elegí tu favorito</p>
+        <div class="pestanas-crepes">
+            <button class="pestana-crepe activa" onclick="mostrarCrepes('dulces', this)">Crepes dulces</button>
+            <button class="pestana-crepe" onclick="mostrarCrepes('salados', this)">Crepes salados</button>
+        </div>
+        <div id="crepesDulces" class="contenido-crepes">
+            <section class="menu-section">
+                <h2>Crepes Dulces</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="crepedulce1.jpg" alt="Crepe Nutella">
+                        <div class="card-content">
+                            <h3>Crepe Nutella</h3>
+                            <p>Nutella, banana y frutillas.</p>
+                            <div class="price">$7.500</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Nutella',7500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepedulce2.jpg" alt="Crepe Oreo">
+                        <div class="card-content">
+                            <h3>Crepe Oreo</h3>
+                            <p>Oreo, crema y chocolate.</p>
+                            <div class="price">$7.500</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Oreo',7500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepedulce3.jpg" alt="Crepe Frutal">
+                        <div class="card-content">
+                            <h3>Crepe Frutal</h3>
+                            <p>Frutillas, banana y crema.</p>
+                            <div class="price">$7.000</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Frutal',7000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepedulce4.jpg" alt="Crepe Nieve">
+                        <div class="card-content">
+                            <h3>Crepe Nieve</h3>
+                            <p>Nueces, dulce de leche, galletas y azúcar impalpable.</p>
+                            <div class="price">$8.000</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Nieve',8000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="crepesSalados" class="contenido-crepes" style="display: none;">
+            <section class="menu-section">
+                <h2>Crepes Salados</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="crepesalado1.jpg" alt="Crepe Toscana">
+                        <div class="card-content">
+                            <h3>Crepe Toscana</h3>
+                            <p>Rúcula, pollo y queso crema.</p>
+                            <div class="price">$8.000</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Toscana',8000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepesalado2.jpg" alt="Crepe Rústico">
+                        <div class="card-content">
+                            <h3>Crepe Rústico</h3>
+                            <p>Calabresa, panceta, carne mechada y queso.</p>
+                            <div class="price">$9.500</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Rustico',9500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepesalado3.jpg" alt="Crepe Clásico">
+                        <div class="card-content">
+                            <h3>Crepe Clásico</h3>
+                            <p>Jamón y queso.</p>
+                            <div class="price">$7.500</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Clásico',7500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="crepesalado4.jpg" alt="Crepe Napoly">
+                        <div class="card-content">
+                            <h3>Crepe Napoly</h3>
+                            <p>Tomate cherry, albahaca y queso.</p>
+                            <div class="price">$9.500</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Napoly',9500)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE WAFFLES -->
+<div id="ventanaWaffles" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaWaffles')" aria-label="Cerrar">&times;</button>
+        <h2>Nuestros Waffles</h2>
+        <p class="subtitulo-modal">Elegí tu favorito</p>
+        <div class="pestanas-crepes">
+            <button class="pestana-crepe activa" onclick="mostrarWaffles('dulces', this)">Waffles dulces</button>
+            <button class="pestana-crepe" onclick="mostrarWaffles('salados', this)">Waffles salados</button>
+        </div>
+        <div id="wafflesDulces" class="contenido-crepes" style="display: none;">
+            <section class="menu-section">
+                <h2>Waffles Dulces</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="waffledulce1.jpg" alt="Waffle Oreo">
+                        <div class="card-content">
+                            <h3>Waffle Oreo</h3>
+                            <p>Oreo, crema y chocolate.</p>
+                            <div class="price">$7.300</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Oreo',7300)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="waffledulce2.jpg" alt="Waffle Frutal">
+                        <div class="card-content">
+                            <h3>Waffle Frutal</h3>
+                            <p>Frutillas, banana y crema.</p>
+                            <div class="price">$7.000</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Frutal',7000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="waffledulce3.jpg" alt="Waffle Kinder">
+                        <div class="card-content">
+                            <h3>Waffle Kinder</h3>
+                            <p>Kinder Bueno, Rocklets de colores y chocolate.</p>
+                            <div class="price">$8.000</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Kinder',8000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="waffledulce4.jpg" alt="Waffle Premium dulce">
+                        <div class="card-content">
+                            <h3>Waffle Premium</h3>
+                            <p>Nutella, frutas y helado.</p>
+                            <div class="price">$7.300</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Premium',7300)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="wafflesSalados" class="contenido-waffles" style="display: none;">
+            <section class="menu-section">
+                <h2>Waffles Salados</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="wafflesalado1.jpg" alt="Waffle Ceprese">
+                        <div class="card-content">
+                            <h3>Waffle Ceprese</h3>
+                            <p>Tomate cherry, mozzarella, albahaca y queso cremoso.</p>
+                            <div class="price">$8.500</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Ceprese',8500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="wafflesalado2.jpg" alt="Waffle Clásico">
+                        <div class="card-content">
+                            <h3>Waffle Clásico</h3>
+                            <p>Jamón y queso cheddar.</p>
+                            <div class="price">$8.000</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Clásico',8000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="wafflesalado3.jpg" alt="Waffle Calabress">
+                        <div class="card-content">
+                            <h3>Waffle Calabress</h3>
+                            <p>Calabresa, tomate y queso mozzarella.</p>
+                            <div class="price">$9.000</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Calabress',9000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="wafflesalado4.jpg" alt="Waffle Premium salado">
+                        <div class="card-content">
+                            <h3>Waffle Premium</h3>
+                            <p>Rúcula, queso, jamón crudo y tomate.</p>
+                            <div class="price">$9.500</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Premium',9500)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE BEBIDAS -->
+<div id="ventanaBebidas" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaBebidas')" aria-label="Cerrar">&times;</button>
+        <h2>Nuestras Bebidas</h2>
+        <p class="subtitulo-modal">Elegí tu favorita</p>
+        <section class="menu-section" id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="menu-grid">
+                <div class="card">
+                    <img src="bebida1.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Milkshake Chocolate</h3>
+                        <p>Batido cremoso de chocolate.</p>
+                        <div class="price">$7.500</div>
+                        <button class="btn" onclick="agregarCarrito('Milkshake Chocolate',7500)">Agregar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="bedida2.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Milkshake Frutilla</h3>
+                        <p>Batido cremoso dulce de frutilla.</p>
+                        <div class="price">$7.500</div>
+                        <button class="btn" onclick="agregarCarrito('Milkshake Frutilla',7500)">Agregar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="bebida3.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Bebida Fresh</h3>
+                        <p>Licuado de anana/naranja.</p>
+                        <div class="price">$5.500</div>
+                        <button class="btn" onclick="agregarCarrito('Bebida Fresh',5500)">Agregar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="bebida4.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Limonada Fresh</h3>
+                        <p>Limonada natural refrescante.</p>
+                        <div class="price">$5.500</div>
+                        <button class="btn" onclick="agregarCarrito('Limonada Fresh',5500)">Agregar</button>
+                    </div>
+                </div>
             </div>
+        </section>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE MENÚ ESPECIAL -->
+<div id="ventanaEspecial" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaEspecial')" aria-label="Cerrar">&times;</button>
+        <h2>Menú Especial</h2>
+        <p class="subtitulo-modal">Opciones para disfrutar a tu manera</p>
+        <div id="menuEspecial" class="contenido-crepes">
+            <section class="menu-section">
+                <h2>Menú Especial</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="especial1.jpg" alt="Crepe Fit">
+                        <div class="card-content">
+                            <h3>Crepe Fit</h3>
+                            <p>Masa integral, frutas frescas y sin azúcar agregada.</p>
+                            <div class="price">$8.000</div>
+                            <button class="btn" onclick="agregarCarrito('Crepe Fit',8000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="especial2.jpg" alt="Waffle Saludable">
+                        <div class="card-content">
+                            <h3>Waffle Saludable</h3>
+                            <p>Waffle integral con frutas frescas y chocolate sin azúcar.</p>
+                            <div class="price">$8.500</div>
+                            <button class="btn" onclick="agregarCarrito('Waffle Saludable',8500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="especial3.jpg" alt="Milkshake Light">
+                        <div class="card-content">
+                            <h3>Milkshake Light</h3>
+                            <p>Bebida sin azúcar con leche descremada y vainilla.</p>
+                            <div class="price">$7.500</div>
+                            <button class="btn" onclick="agregarCarrito('Milkshake Light',7500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="especial4.jpg" alt="Combo Balance">
+                        <div class="card-content">
+                            <h3>Combo Balance</h3>
+                            <p>Crepe integral con queso cremoso, un milkshake light y frutas frescas.</p>
+                            <div class="price">$18.000</div>
+                            <button class="btn" onclick="agregarCarrito('Combo Balance',18000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="card">
-            <img src="crepesalado4.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Napoly.</h3>
-                <p>Tomate cherry, Albahaca y queso.</p>
-                <div class="price">$9.500</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Napoly',9500)"> Agregar </button>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE BEBIDAS SIN LACTOSA -->
+<div id="ventanaSinLactosa" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaSinLactosa')" aria-label="Cerrar">&times;</button>
+        <h2>Bebidas sin lactosa</h2>
+        <p class="subtitulo-modal">Alternativas para disfrutar</p>
+        <div id="menuSinLactosa" class="contenido-crepes">
+            <section class="menu-section">
+                <h2>Bebidas Sin Lactosa</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="sinlactosa1.jpg" alt="Milkshake Veggie">
+                        <div class="card-content">
+                            <h3>Milkshake Veggie</h3>
+                            <p>Leche vegetal, cacao y crema sin lactosa.</p>
+                            <div class="price">$7.500</div>
+                            <button class="btn" onclick="agregarCarrito('Milkshake Veggie', 7500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="sinlactosa2.jpg" alt="Café Almond">
+                        <div class="card-content">
+                            <h3>Café Almond</h3>
+                            <p>Café con leche de almendras espumosa.</p>
+                            <div class="price">$4.800</div>
+                            <button class="btn" onclick="agregarCarrito('Café Almond', 4800)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="sinlactosa3.jpg" alt="Frappé Coco">
+                        <div class="card-content">
+                            <h3>Frappé Coco</h3>
+                            <p>Bebida fría con leche de coco y vainilla.</p>
+                            <div class="price">$6.500</div>
+                            <button class="btn" onclick="agregarCarrito('Frappé Coco', 6500)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="sinlactosa4.jpg" alt="Licuado Tropical">
+                        <div class="card-content">
+                            <h3>Licuado Tropical</h3>
+                            <p>Mango, banana y leche vegetal natural.</p>
+                            <div class="price">$6.000</div>
+                            <button class="btn" onclick="agregarCarrito('Licuado Tropical', 6000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- VENTANA FLOTANTE DE COMBOS -->
+<div id="ventanaCombos" class="modal-menu">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="cerrarVentana('ventanaCombos')" aria-label="Cerrar">&times;</button>
+        <h2>Nuestros Combos</h2>
+        <p class="subtitulo-modal">Combinaciones para compartir</p>
+        <div id="menuCombos" class="contenido-crepes">
+            <section class="menu-section">
+                <h2>Combos</h2>
+                <div class="menu-grid">
+                    <div class="card">
+                        <img src="combo1.jpg" alt="Combo 2x1">
+                        <div class="card-content">
+                            <h3>Combo 2x1</h3>
+                            <p>2 crepes dulces + 2 bebidas + brownie para compartir.</p>
+                            <div class="price">$35.000</div>
+                            <button class="btn" onclick="agregarCarrito('Combo Pareja', 35000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="combo2.jpg" alt="Combo Amigas">
+                        <div class="card-content">
+                            <h3>Combo Amigas</h3>
+                            <p>2 waffles premium + milkshakes + box mini dulces.</p>
+                            <div class="price">$48.000</div>
+                            <button class="btn" onclick="agregarCarrito('Combo Amigas', 48000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="combo3.jpg" alt="Combo Cumpleaños">
+                        <div class="card-content">
+                            <h3>Combo Cumpleaños</h3>
+                            <p>Un mini waffle con velita sorpresa, 2 crepes dulces y 2 bebidas Fresh.</p>
+                            <div class="price">$32.000</div>
+                            <button class="btn" onclick="agregarCarrito('Combo Cumpleaños', 32000)">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="combo4.jpg" alt="Combo Familiar">
+                        <div class="card-content">
+                            <h3>Combo Familiar</h3>
+                            <p>4 crepes + 4 bebidas + waffles premium familiar.</p>
+                            <div class="price">$48.000</div>
+                            <button class="btn" onclick="agregarCarrito('Combo Familiar', 48000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- BOTÓN FLOTANTE DEL CARRITO -->
+<div id="carrito-btn" onclick="abrirCarrito()"> 
+    🛒 <span id="contador">0</span> 
+</div>
+
+<!-- BOTÓN FLOTANTE DE MENSAJES / FEEDBACK -->
+<div id="mensaje-btn" onclick="abrirModalFeedback()"> 
+    💬
+</div>
+
+<!-- MODAL DE FEEDBACK / MENSAJES -->
+<div id="modalFeedback" class="modal-personalizar">
+    <div class="modal-contenido-personalizar">
+        <span class="cerrar-modal" onclick="cerrarModalFeedback()">&times;</span>
+        <h2>💬 Mensajes y Opiniones</h2>
+        <p style="text-align: center; color: #6D4C41; margin-bottom: 15px;">Elegí qué querés enviarnos a través de WhatsApp</p>
+        
+        <div class="opciones-feedback">
+            <!-- OPCIÓN 1: VALORACIÓN -->
+            <div class="caja-opcion-feedback">
+                <h3>❤️ Valorá nuestra atención</h3>
+                <label>Seleccioná tus corazones:</label>
+                <select id="calificacionEstrellas" style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 8px; border: 1px solid #8B5E3C;">
+                    <option value="❤️ ❤️ ❤️ ❤️ ❤️ (5/5)">❤️ ❤️ ❤️ ❤️ ❤️ - ¡Excelente!</option>
+                    <option value="❤️ ❤️ ❤️ ❤️ (4/5)">❤️ ❤️ ❤️ ❤️ - Muy buena</option>
+                    <option value="❤️ ❤️ ❤️ (3/5)">❤️ ❤️ ❤️ - Regular</option>
+                    <option value="💔💔 (2/5)">💔💔 - Mala</option>
+                    <option value="💔 (1/5)">💔 - Muy mala</option>
+                </select>
+                <textarea id="comentarioCalificacion" placeholder="Contanos más sobre tu experiencia (opcional)..." rows="2" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+                <button class="btn-agregar-carrito" onclick="enviarFeedbackInstagram('valoracion')">Enviar Valoración a WhatsApp</button>
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #e0d0c0;">
+
+            <!-- OPCIÓN 2: CONSULTAS O SUGERENCIAS -->
+            <div class="caja-opcion-feedback">
+                <h3>❓ Consultas o Reclamos</h3>
+                <textarea id="textoConsulta" placeholder="Escribí acá tu consulta o aspecto a mejorar..." rows="3" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc; margin-top: 8px;"></textarea>
+                <button class="btn-agregar-carrito" onclick="enviarFeedbackInstagram('consulta')">Enviar Consulta a WhatsApp</button>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- WAFFLES -->
-<section class="menu-section" id="waffles-dulce"> <!-- Sección waffles -->
-    <h2>Waffles Dulces</h2> <!-- Título -->
-    <div class="menu-grid">
-        <div class="card">
-            <img src="waffledulce1.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Oreo</h3>
-                <p>Oreo, crema y chocolate.</p>
-                <div class="price">$7.300</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Oreo',7300)"> Agregar </button>
-            </div>
+<!-- CARRITO DE COMPRAS CON MULTIPASO Y MEDIOS DE PAGO -->
+<div id="carrito" class="carrito">
+    <div class="carrito-contenido">
+        <span class="cerrar-carrito" onclick="cerrarCarrito()">&times;</span>
+        <h2>Mi Pedido</h2>
+        
+        <!-- PASO 1: Lista de productos -->
+        <div id="paso-productos">
+            <div id="lista-carrito"></div>
+            <hr>
+            <p><strong>Productos:</strong> <span id="cantidad-total">0</span></p>
+            <p><strong>Total:</strong> $<span id="precio-total">0</span></p>
+            
+            <button class="btn-agregar-carrito" style="width: 100%; margin-top: 15px;" onclick="mostrarPasoPago()">
+                Realizar Pedido 🛒
+            </button>
         </div>
-        <div class="card">
-            <img src="waffledulce2.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Frutal</h3>
-                <p>Frutillas, banana y crema.</p>
-                <div class="price">$7.000</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Frutal',7000)"> Agregar </button>
+
+        <!-- PASO 2: Formas de pago -->
+        <div id="paso-pago" style="display: none; margin-top: 15px;">
+            <hr style="margin-bottom: 15px; border-top: 1px solid #e0d0c0;">
+            <h3 style="color: #4E342E; font-size: 1.1rem; margin-bottom: 12px;">💳 Seleccioná tu medio de pago</h3>
+            
+            <!-- Opción 1: Efectivo -->
+            <label style="display: block; margin-bottom: 8px; color: #4E342E; cursor: pointer; font-weight: bold;">
+                <input type="radio" name="metodoPago" value="Efectivo en caja" onchange="cambiarMetodoPago()" checked> 
+                Efectivo en caja
+            </label>
+
+            <!-- Opción 2: Transferencia -->
+            <label style="display: block; margin-bottom: 8px; color: #4E342E; cursor: pointer; font-weight: bold;">
+                <input type="radio" name="metodoPago" value="Transferencia Bancaria / Mercado Pago" onchange="cambiarMetodoPago()"> 
+                Transferencia Bancaria / Mercado Pago
+            </label>
+
+            <!-- Opción 3: Tarjetas (Débito / Crédito) -->
+            <label style="display: block; margin-bottom: 8px; color: #4E342E; cursor: pointer; font-weight: bold;">
+                <input type="radio" name="metodoPago" value="Tarjeta (Débito / Crédito)" onchange="cambiarMetodoPago()"> 
+                Tarjeta de Débito o Crédito
+            </label>
+
+            <!-- Recuadros Informativos Dinámicos -->
+            <div id="info-efectivo" style="background: #FFF8E7; padding: 10px; border-radius: 8px; border: 1px solid #E6C280; margin: 10px 0; font-size: 0.9rem; color: #5D4037;">
+                💵 <strong>Efectivo:</strong> Abonás al retirar o recibir tu pedido.
             </div>
-        </div>
-        <div class="card">
-            <img src="waffledulce3.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Kinder</h3>
-                <p>Kinder Bueno, rocklets de colores y chocolate.</p>
-                <div class="price">$8.000</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Kinder',8000)"> Agregar
-                </button>
+
+            <div id="info-transferencia" style="display: none; background: #eef7ee; padding: 10px; border-radius: 8px; border: 1px solid #c3e6cb; margin: 10px 0; font-size: 0.9rem; color: #155724;">
+                📌 <strong>Alias para transferir:</strong> <code>creme.eldorado</code><br>
+                <small>Recordá enviar la captura del comprobante por WhatsApp.</small>
             </div>
-        </div>
-        <div class="card">
-            <img src="waffledulce4.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Premium</h3>
-                <p>Nutella, frutas y helado.</p>
-                <div class="price">$7.300</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Premium',7300)"> Agregar </button>
+
+            <div id="info-tarjetas" style="display: none; background: #eef2f7; padding: 10px; border-radius: 8px; border: 1px solid #b8daff; margin: 10px 0; font-size: 0.9rem; color: #004085;">
+                💳 <strong>Elegí cómo usar tu tarjeta:</strong><br>
+                <label style="display: block; margin-top: 6px; cursor: pointer;">
+                    <input type="radio" name="subTipoTarjeta" value="Con tarjeta en caja (Posnet)" checked> 
+                    Abonar con tarjeta en caja (Posnet)
+                </label>
+                <label style="display: block; margin-top: 4px; cursor: pointer;">
+                    <input type="radio" name="subTipoTarjeta" value="Pago online con tarjeta (Link de pago)"> 
+                    Pagar online con tarjeta (Pedir Link de Pago)
+                </label>
             </div>
+
+            <textarea id="notasPedido" placeholder="Aclaraciones opcionales (ej. horario de retiro, sin crema...)" rows="2" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc; margin-top: 10px; margin-bottom: 12px; box-sizing: border-box;"></textarea>
+
+            <!-- LEYENDA EN CURSIVA DE TÉRMINOS Y CONDICIONES EN EL CARRITO -->
+            <div style="font-size: 0.8rem; color: #6D4C41; margin-top: 10px; margin-bottom: 12px; text-align: center; background: #faf4ee; padding: 8px 10px; border-radius: 8px; border: 1px solid #e0d0c0; font-style: italic;">
+                🔒 Al presionar "Enviar Pedido", confirmás tu elección y aceptás nuestros 
+                <a href="#" onclick="abrirModal('terminos'); return false;" style="color: #8B5E3C; font-weight: bold; text-decoration: underline; font-style: normal;">Términos y Condiciones de Compra</a>.
+            </div>
+
+            <button class="btn-agregar-carrito" style="width: 100%;" onclick="enviarPedidoInstagram()">
+                Enviar Pedido a WhatsApp 📲
+            </button>
+            
+            <button style="width: 100%; background: transparent; border: none; color: #8B5E3C; cursor: pointer; margin-top: 10px; text-decoration: underline;" onclick="volverAProductos()">
+                ← Volver al carrito
+            </button>
         </div>
     </div>
-</section>
-</section>
+</div>
 
-<!-- WAFFLES -->
-<section class="menu-section" id="waffles-salado"> <!-- Sección waffles -->
-    <h2>Waffles Salados</h2> <!-- Título -->
-    <div class="menu-grid">
-        <div class="card">
-            <img src="wafflesalado1.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Ceprese</h3>
-                <p>Tomate cheryy, Mozzarela, Albahaca y queso cremoso.</p>
-                <div class="price">$8.500</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Ceprese',8.500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="wafflesalado2.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Clásico</h3>
-                <p>Jamón y Queso cheddar.</p>
-                <div class="price">$8.000</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Clásico',8000)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="wafflesalado3.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Calabress</h3>
-                <p>Calabreza, tomate, queso mozzarela.</p>
-                <div class="price">$9.000</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Calabress',9000)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="wafflesalado4.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Premium</h3>
-                <p>Rúcula, queso, jamon crudo,tomate.</p>
-                <div class="price">$9.500</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Premiun',9500)"> Agregar </button>
-            </div>
-        </div>
-    </div>
-</section>
-</section>
-
-
-<!-- MENÚ ESPECIAL -->
-<section class="menu-section" id="especial">
-    <h2>Menú Especial</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <img src="especial1.jpg" alt="">
-            <div class="card-content">
-                <h3>Crepe Fit</h3>
-                <p>Masa integral, frutas frescas y sin azúcar agregada.</p>
-                <div class="price">$8.000</div>
-                <button class="btn" onclick="agregarCarrito('Crepe Fit',8000)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="especial2.jpg" alt="">
-            <div class="card-content">
-                <h3>Waffle Saludable</h3>
-                <p>Waffle integral con frutas frescas y chocolate sin azúcar.</p>
-                <div class="price">$8.500</div>
-                <button class="btn" onclick="agregarCarrito('Waffle Saludable',8500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="especial3.jpg" alt="">
-            <div class="card-content">
-                <h3>Milkshake Light</h3>
-                <p>Bebida sin azúcar con leche descremada y vainilla.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Milkshake Light',7500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="especial4.jpg" alt="">
-            <div class="card-content">
-                <h3>Combo Balance</h3>
-                <p>Crepe integral con queso cremoso + un milkshake light + frutas frescas.</p>
-                <div class="price">$18.000</div>
-                <button class="btn"onclick="agregarCarrito('Combo Balance',18000)"> Agregar </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- BEBIDAS -->
-<section class="menu-section" id="bebidas"> <!-- Sección bebidas -->
-    <h2>Bebidas</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <img src="bebida1.jpg" alt="">
-            <div class="card-content">
-                <h3>Milkshake Chocolate</h3>
-                <p>Batido cremoso de chocolate.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Milkshake Chocolate',7500)"> Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="bedida2.jpg" alt="">
-            <div class="card-content">
-                <h3>Milkshake Frutilla</h3>
-                <p>Batido cremoso dulce de frutilla.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Milkshake Frutilla',7500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="bebida3.jpg" alt="">
-            <div class="card-content">
-                <h3>Bebida Fresh</h3>
-                <p>Licuado de anana/naranja.</p>
-                <div class="price">$5.500</div>
-                <button class="btn" onclick="agregarCarrito('Bebida Fresh',5500)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="bebida4.jpg" alt="">
-            <div class="card-content">
-                <h3>Limonada Fresh</h3>
-                <p>Limonada natural refrescante.</p>
-                <div class="price">$5.500</div>
-                <button class="btn"onclick="agregarCarrito('Limonada Fresh',5500)">Agregar</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BEBIDAS SIN LACTOSA -->
-<section class="menu-section" id="sinlactosa">
-    <h2>Bebidas Sin Lactosa</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <img src="sinlactosa1.jpg" alt="">
-            <div class="card-content">
-                <h3>Milkshake Veggie</h3>
-                <p>Leche vegetal, cacao y crema sin lactosa.</p>
-                <div class="price">$7.500</div>
-                <button class="btn" onclick="agregarCarrito('Milkshake Veggie',7500)">Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="sinlactosa2.jpg" alt="">
-            <div class="card-content">
-                <h3>Café Almond</h3>
-                <p>Café con leche de almendras espumosa.</p>
-                <div class="price">$4.800</div>
-                <button class="btn" onclick="agregarCarrito('Café Almond',4800)">Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="sinlactosa3.jpg" alt="">
-            <div class="card-content">
-                <h3>Frappé Coco</h3>
-                <p>Bebida fría con leche de coco y vainilla.</p>
-                <div class="price">$6.500</div>
-                <button class="btn" onclick="agregarCarrito('Frappé Coco',6500)"> Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="sinlactosa4.jpg" alt="">
-            <div class="card-content">
-                <h3>Licuado Tropical</h3>
-                <p>Mango, banana y leche vegetal natural.</p>
-                <div class="price">$6.000</div>
-                <button class="btn"onclick="agregarCarrito('Licuado Tropical',6000)">Agregar</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- COMBOS -->
-<section class="menu-section" id="combos"> <!-- Sección combos -->
-    <h2>Combos</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <img src="combo1.jpg" alt="">
-            <div class="card-content">
-                <h3>Combo 2x1</h3>
-                <p>2 crepes dulces + 2 bebidas + brownie para compartir.</p>
-                <div class="price">$35.000</div>
-                <button class="btn" onclick="agregarCarrito('Combo Pareja',35000)">Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="combo2.jpg" alt="">
-            <div class="card-content">
-                <h3>Combo Amigas</h3>
-                <p>2 waffles premium + milkshakes + box mini dulces.</p>
-                <div class="price">$48.000</div>
-                <button class="btn" onclick="agregarCarrito('Combo Amigas',48000)">Agregar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="combo3.jpg" alt="">
-            <div class="card-content">
-                <h3>Combo Cumpleaños</h3>
-                <p>Un mini waffle con vellita sorpresa, 2 crepes dulces, 2 bebidas fresh.</p>
-                <div class="price">$32.000</div>
-                <button class="btn"onclick="agregarCarrito('Combo Cumpleaños',32000)"> Agregar </button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="combo4.jpg" alt="">
-            <div class="card-content">
-                <h3>Combo Familiar</h3>
-                <p>4 crepes + 4 bebidas + waffles premium familiar.</p>
-                <div class="price">$48.000</div>
-                <button class="btn"onclick="agregarCarrito('Combo Familiar',48000)">Agregar</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PERSONALIZA TU CREPE --> <!-- Sección que permite al cliente crear un crepe personalizado -->
-<section class="menu-section" id="personalizado"> <!-- Se crea una nueva sección identificada como "personalizado" -->
-    <h2>🥞 Personalizá tu Crepe</h2> <!-- Título principal de la sección -->
-    <div class="personalizado-box"> <!-- Contenedor visual donde se agrupan todas las opciones de personalización -->
-    <h3>Elegí tu base</h3> <!-- Subtítulo que indica al usuario que debe seleccionar el tipo de crepe -->
-    <label> <!-- Etiqueta que agrupa el botón de selección y el texto -->
-    <input type="radio" name="baseCrepe" value="dulce"> <!-- Opción para seleccionar un crepe dulce. Se usa radio para permitir una única elección -->
-    Crepe Dulce <!-- Texto visible para el usuario --> </label>
-    <label>
-    <input type="radio" name="baseCrepe" value="salado"> <!-- Opción para seleccionar un crepe salado -->
-    Crepe Salado </label>
-    <h3>Ingredientes Dulces</h3> <!-- Subtítulo que agrupa los ingredientes dulces -->
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="3000"> <!-- Casilla que permite agregar Nutella y asigna un valor de $1000 al cálculo -->
-    Nutella (+$3000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="2000"><!-- Casilla que permite agregar Oreo y suma $500 -->
-    Oreo (+$2000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="1000"> <!-- Casilla que permite agregar Banana y suma $300 -->
-    Banana (+$1000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="2500"> <!-- Casilla que permite agregar Frutilla y suma $400 -->
-    Frutilla (+$2500)
-    </label>
-    <h3>Ingredientes Salados</h3> <!-- Subtítulo que agrupa los ingredientes salados -->
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="2000"> <!-- Casilla que permite agregar Jamón y suma $800 -->
-    Jamón (+$2000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="3000"> <!-- Casilla que permite agregar Queso y suma $700 -->
-    Queso (+$3000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="1800"> <!-- Casilla que permite agregar Rúcula y suma $300 -->
-    Rúcula (+$1800) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-crepe" value="2000"> <!-- Casilla que permite agregar Tomate Cherry y suma $400 -->
-    Tomate Cherry (+$2000)</label>
-    <h3>
-    Precio estimado: <!-- Texto que informa el costo estimado del pedido -->
-    $<span id="totalCrepe">0</span> <!-- Espacio donde JavaScript mostrará el total calculado -->
-    </h3>
-    <button class="btn" onclick="crearPedidoCrepe()">
-        Realizar Pedido </button>
-        <div id="resumenWaffle"></div>
-    <div id="resumenCrepe"></div> <!-- Espacio donde se mostrará el resumen final del pedido personalizado -->
-    </div> <!-- Fin del contenedor de personalización -->
-    </section><!-- Fin de la sección Personalizá tu Crepe -->
-
-    <!-- PERSONALIZA TU WAFFLE -->
-<section class="menu-section">
-    <h2><h2>🧇 Personalizá tu Waffle</h2></h2>
-    <div class="personalizado-box">
-    <h3>Elegí tu base</h3>
-    <label>
-    <input type="radio" name="baseWaffle" value="dulce">
-    Waffle Dulce</label>
-    <label>
-    <input type="radio" name="baseWaffle" value="salado">
-    Waffle Salado
-    </label>
-    <h3>Ingredientes Dulces</h3>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="3000">
-    Nutella (+$3000)</label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="2000">
-    Oreo (+$2000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="1000">
-    Banana (+$1000)</label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="2500">
-    Frutilla (+$2500) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="3300">
-    Kinder Bueno (+$3300) </label>
-    <h3>Ingredientes Salados</h3>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="2000">
-    Jamón (+$2000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="3000">
-    Queso (+$3000) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="2500">
-    Panceta (+$2500) </label>
-    <label>
-    <input type="checkbox" class="ingrediente-waffle" value="1800">
-    Pollo (+$1800) </label>
-    <h3>
-    Precio estimado:
-    $<span id="totalWaffle">0</span>
-    </h3>
-    <button class="btn" onclick="crearPedidoWaffle()">
-        Realizar Pedido </button>
-        <div id="resumenWaffle"></div>
-    </div>
-    </section>
-
-    <script>
-        function abrirMenu() {
-    document.getElementById("menuLateral").style.width = "250px"; // Abre el menú lateral cambiando su ancho a 250 píxeles
-}
-function cerrarMenu() {
-    document.getElementById("menuLateral").style.width = "0"; // Cierra el menú lateral reduciendo su ancho a 0 píxeles
-}
-function abrirModal(seccion){ // Función que abre una ventana emergente según la opción seleccionada
-    let titulo=""; // Variable que almacenará el título del modal
-    let texto="";// Variable que almacenará el contenido del modal
-    if(seccion=="quienes"){ // Verifica si el usuario seleccionó "Quiénes Somos"
-    titulo="Quiénes Somos";// Asigna el título correspondiente
-    texto="¡Hola! Te damos la bienvenida a CREMÉ Crepes & Waffles, un espacio pensado para disfrutar de momentos ricos y con buena onda. Nuestra propuesta es moderna, fresca e inclusivo: en la carta vas a encontrar crepes y waffles (dulces y salados), opciones saludables, alternativas aptas para diabéticos o intolerantes a la lactosa, café de especialidad, milkshakes y jugos naturales. Cremé es el punto de encuentro ideal para compartir con amigos o en familia. ¡Te invitamos a visitarnos y encontrar tu combinación favorita!"; // Asigna el texto descriptivo del emprendimiento
-    }
-if(seccion=="horarios"){ // Verifica si el usuario seleccionó "Horarios"
-titulo="Horarios";// Asigna el título correspondiente
-texto="Atendemos todos los días de 08:00 a 12:00 / 16:00 a 20:00.";// Asigna el horario de atención
-}
-if(seccion=="pagos"){// Verifica si el usuario seleccionó "Formas de Pago"
-titulo="Formas de Pago";// Asigna el título correspondiente
-texto="Aceptamos efectivo, transferencias, tarjetas de débito y crédito.";// Asigna la información sobre medios de pago
-}
-if(seccion=="ubicacion"){// Verifica si el usuario seleccionó "Ubicación"
-titulo="Ubicación";// Asigna el título correspondiente
-texto="Eldorado, Misiones, Argentina.";// Asigna la ubicación del emprendimiento
-}
-if(seccion=="redes"){// Verifica si el usuario seleccionó "Redes Sociales"
-titulo="Redes Sociales";// Asigna el título correspondiente
-texto="Instagram: @creme_eldo";// Asigna la información de las redes sociales
-}
-document.getElementById("tituloModal").innerHTML=titulo;// Inserta el título dentro del modal
-document.getElementById("textoModal").innerHTML=texto; // Inserta el texto correspondiente dentro del modal
-document.getElementById("modal").style.display="block"; // Muestra la ventana modal en pantalla
-}
-function cerrarModal(){
-document.getElementById("modal").style.display="none";// Oculta la ventana modal cuando el usuario la cierra
-}
-    </script>
-
-<!-- funciones de carrito -->
+<!-- JAVASCRIPT NUEVO CON INTEGRACIÓN A WHATSAPP -->
 <script>
-    let carrito = [];// Arreglo donde se almacenan todos los productos agregados al carrito
-    let cantidadCarrito = 0;// Variable creada para almacenar la cantidad de productos del carrito
-function agregarCarrito(nombre, precio){ // Función que agrega un producto al carrito 
-    carrito.push({
-        nombre: nombre, // Guarda el nombre del producto
-        precio: precio // Guarda el precio del producto
+    // Número de WhatsApp de Cremé configurado listo para recibir pedidos
+    const numeroWhatsApp = "5493751593976"; 
+    
+    function abrirMenu() {
+        document.getElementById("menuLateral").style.width = "250px";
+    }
+    
+    function cerrarMenu() {
+        document.getElementById("menuLateral").style.width = "0";
+    }
+    
+    function abrirModal(seccion) {
+        let titulo = "";
+        let texto = "";
+        if (seccion == "quienes") {
+            titulo = "Quiénes Somos";
+            texto = "¡Hola! Te damos la bienvenida a CREMÉ Crepes & Waffles, un espacio pensado para disfrutar de momentos ricos y con buena onda. Nuestra propuesta es moderna, fresca e inclusiva: en la carta vas a encontrar crepes y waffles (dulces y salados), opciones saludables, alternativas aptas para diabéticos o intolerantes a la lactosa, café de especialidad, milkshakes y jugos naturales. Cremé es el punto de encuentro ideal para compartir con amigos o en familia. ¡Te invitamos a visitarnos y encontrar tu combinación favorita!";
+        } else if (seccion == "horarios") {
+            titulo = "Horarios";
+            texto = "Atendemos de Martes a Domingo de 08:00 a 12:00 / 16:00 a 20:00.";
+        } else if (seccion == "pagos") {
+            titulo = "Formas de Pago";
+            texto = "Aceptamos efectivo, transferencias, tarjetas de débito y crédito.";
+        } else if (seccion == "ubicacion") {
+            titulo = "Ubicación";
+            texto = "Lowe 76, N3380 Eldorado, Misiones, Argentina.";
+        } else if (seccion == "redes") {
+            titulo = "Redes Sociales";
+            texto = "Instagram: @creme_eldorado";
+        } else if (seccion == "terminos") {
+        titulo = "Términos, Condiciones y Políticas de Seguridad";
+        texto = `
+        <b>1. Elaboración e Higiene:</b> Todos nuestros crepes, waffles y bebidas se elaboran al momento con ingredientes frescos de primera calidad, bajo estrictas normas de higiene alimentaria.<br><br>
+        <b>2. Confirmación de Pedidos y Pagos:</b> Los pedidos con pago por transferencia bancaria o Mercado Pago comenzarán a prepararse una vez recibido el comprobante de pago en nuestro chat oficial de Instagram.<br><br>
+        <b>3. Alergias e Intolerancias:</b> Si bien contamos con opciones aptas para personas con intolerancia a la lactosa u otras preferencias, solicitamos al cliente indicar cualquier alergia en la caja de aclaraciones antes de confirmar su pedido.<br><br>
+        <b>4. Tiempos de Retiro y Tolerancia:</b> Los productos gastronómicos calientes o fríos mantienen su calidad óptima dentro del horario estimado de retiro. Cremé no se responsabiliza por cambios de temperatura si el pedido no es retirado a tiempo.<br><br>
+        <b>5. Modificaciones y Cancelaciones:</b> Una vez ingresado el pedido a cocina, no se aceptarán cancelaciones ni devoluciones del dinero abonado.<br><br>
+        <b>6. Privacidad y Seguridad:</b> Los datos del pedido no son almacenados en servidores externos ni compartidos con terceros; se utilizan únicamente para procesar la solicitud en nuestro canal oficial de WhatsApp.
+        `;
+
+        } else if (seccion == "derechos") { 
+            titulo = "Derechos del Consumidor en Cremé";
+            texto = `
+            En Cremé respetamos y garantizamos tus derechos como consumidor (Ley N° 24.240) para que disfrutes de tu experiencia con total tranquilidad:<br><br>
+            <b>• Información Clara y Veraz:</b> Tenés derecho a conocer los precios finales, ingredientes y características reales de cada producto de nuestra carta.<br><br>
+            <b>• Protección de la Salud e Higiene:</b> Garantizamos el uso de ingredientes frescos, de primera calidad y bajo estrictas normas de manipulación alimentaria.<br><br>
+            <b>• Trato Digno y Equitativo:</b> Nos comprometemos a brindarte una atención transparente, respetuosa y sin distinciones en todos nuestros canales.<br><br>
+            <b>• Cumplimiento de lo Pactado:</b> Tu pedido se elaborará respetando fielmente los agregados, personalizaciones y promociones seleccionadas.<br><br>
+            <b>• Modificación antes de Preparar:</b> Podés solicitar cambios o cancelaciones de tu pedido siempre y cuando no se haya iniciado la elaboración en cocina.<br><br>
+            <b>• Privacidad de tus Datos:</b> Tu información solo se utiliza para procesar tu pedido de forma directa y segura a través de nuestros canales oficiales.
+            `;
+        }
+    
+        document.getElementById("tituloModal").innerHTML = titulo;
+        document.getElementById("textoModal").innerHTML = texto;
+        document.getElementById("modal").style.display = "block";
+    }
+    
+    function cerrarModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    
+    let carrito = [];
+    
+    function agregarCarrito(nombre, precio) {
+        carrito.push({ nombre: nombre, precio: precio });
+        actualizarCarrito();
+    }
+    
+    function actualizarCarrito() {
+        let lista = document.getElementById("lista-carrito");
+        if (!lista) return;
+        lista.innerHTML = "";
+        let total = 0;
+        carrito.forEach((producto, index) => {
+            total += producto.precio;
+            lista.innerHTML += `
+            <div class="item-carrito">
+                <span>${producto.nombre}</span>
+                <span>$${producto.precio}</span>
+                <button onclick="eliminarProducto(${index})">❌</button>
+            </div>`;
         });
-        actualizarCarrito(); // Actualiza la visualización del carrito después de agregar un producto
+        let contador = document.getElementById("contador");
+        let cantTotal = document.getElementById("cantidad-total");
+        let precioTotal = document.getElementById("precio-total");
+        
+        if (contador) contador.innerText = carrito.length;
+        if (cantTotal) cantTotal.innerText = carrito.length;
+        if (precioTotal) precioTotal.innerText = total;
     }
-function actualizarCarrito(){ // Función que actualiza la lista de productos, cantidad y precio total
-    let lista = document.getElementById("lista-carrito"); // Obtiene el contenedor donde se mostrarán los productos del carrito
-    lista.innerHTML = "";// Limpia el contenido anterior para volver a generarlo actualizado
-    let total = 0; // Variable que acumulará el precio total de la compra
-    carrito.forEach((producto,index)=>{ // Recorre todos los productos almacenados en el carrito
-        total += producto.precio;// Suma el precio de cada producto al total general
-        lista.innerHTML += `
-        <div class="item-carrito">
-        <span>${producto.nombre}</span>
-        <!-- Muestra el nombre del producto -->
-        <span>$${producto.precio}</span>
-        <!-- Muestra el precio del producto -->
-        <button onclick="eliminarProducto(${index})">❌</button>
-        <!-- Botón para eliminar el producto seleccionado -->
-</div> `;
+    
+    function eliminarProducto(index) {
+        carrito.splice(index, 1);
+        actualizarCarrito();
+    }
+    
+    function abrirCarrito() {
+        let el = document.getElementById("carrito");
+        if (el) el.style.display = "block";
+    }
+    
+    function cerrarCarrito() {
+        let el = document.getElementById("carrito");
+        if (el) el.style.display = "none";
+    }
+    
+    function abrirVentana(id) {
+        const ventana = document.getElementById(id);
+        if (ventana) {
+            ventana.style.display = "flex";
+        }
+    }
+    
+    function cerrarVentana(id) {
+        const ventana = document.getElementById(id);
+        if (ventana) {
+            ventana.style.display = "none";
+        }
+    }
+    
+    function mostrarCrepes(tipo, boton) {
+        const dulces = document.getElementById("crepesDulces");
+        const salados = document.getElementById("crepesSalados");
+    
+        if (!dulces || !salados) return;
+    
+        dulces.style.display = tipo === "dulces" ? "block" : "none";
+        salados.style.display = tipo === "salados" ? "block" : "none";
+    
+        document.querySelectorAll("#ventanaCrepes .pestana-crepe").forEach(function(pestana) {
+            pestana.classList.remove("activa");
         });
-document.getElementById("contador").innerText = carrito.length; // Actualiza el número que aparece en el ícono del carrito
-document.getElementById("cantidad-total").innerText = carrito.length; // Muestra la cantidad total de productos agregados
-document.getElementById("precio-total").innerText = total; // Muestra el precio total de la compra
+        boton.classList.add("activa");
     }
-function eliminarProducto(index){ // Función que elimina un producto específico del carrito
-carrito.splice(index,1); // Elimina un elemento del arreglo utilizando su posición
-actualizarCarrito(); // Actualiza nuevamente la visualización del carrito
+    
+    function mostrarWaffles(tipo, boton) {
+        const dulces = document.getElementById("wafflesDulces");
+        const salados = document.getElementById("wafflesSalados");
+    
+        if (!dulces || !salados) return;
+    
+        dulces.style.display = tipo === "dulces" ? "block" : "none";
+        salados.style.display = tipo === "salados" ? "block" : "none";
+    
+        const ventana = document.getElementById("ventanaWaffles");
+        if (ventana) {
+            ventana.querySelectorAll(".pestana-crepe").forEach(function(pestana) {
+                pestana.classList.remove("activa");
+            });
+        }
+        boton.classList.add("activa");
     }
-function abrirCarrito(){ // Función que muestra la ventana del carrito
-document.getElementById("carrito").style.display="block"; // Cambia el display para hacer visible el carrito
+    
+    function filtrarBusqueda(event) {
+        let input = document.getElementById("inputBusqueda");
+        let contenedorResultados = document.getElementById("resultadoBusqueda");
+        if (!input || !contenedorResultados) return;
+        
+        let texto = input.value.toLowerCase();
+        
+        if (texto.trim() === "") {
+            contenedorResultados.style.display = "none";
+            contenedorResultados.innerHTML = "";
+            return;
+        }
+    
+        let items = [
+            { nombre: "Crepe Nutella", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Oreo", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Frutal", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Nieve", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Toscana", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Rustico", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Clásico", tipo: "ventana", id: "ventanaCrepes" },
+            { nombre: "Crepe Napoly", tipo: "ventana", id: "ventanaCrepes" },
+            
+            { nombre: "Waffle Oreo", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Frutal", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Kinder", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Premium", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Ceprese", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Clásico", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Calabress", tipo: "ventana", id: "ventanaWaffles" },
+            { nombre: "Waffle Premium Salado", tipo: "ventana", id: "ventanaWaffles" },
+            
+            { nombre: "Milkshake Chocolate", tipo: "ventana", id: "ventanaBebidas" },
+            { nombre: "Milkshake Frutilla", tipo: "ventana", id: "ventanaBebidas" },
+            { nombre: "Bebida Fresh", tipo: "ventana", id: "ventanaBebidas" },
+            { nombre: "Limonada Fresh", tipo: "ventana", id: "ventanaBebidas" },
+            
+            { nombre: "Crepe Fit", tipo: "ventana", id: "ventanaEspecial" },
+            { nombre: "Waffle Saludable", tipo: "ventana", id: "ventanaEspecial" },
+            { nombre: "Milkshake Light", tipo: "ventana", id: "ventanaEspecial" },
+            { nombre: "Combo Balance", tipo: "ventana", id: "ventanaEspecial" },
+            
+            { nombre: "Milkshake Veggie", tipo: "ventana", id: "ventanaSinLactosa" },
+            { nombre: "Café Almond", tipo: "ventana", id: "ventanaSinLactosa" },
+            { nombre: "Frappé Coco", tipo: "ventana", id: "ventanaSinLactosa" },
+            { nombre: "Licuado Tropical", tipo: "ventana", id: "ventanaSinLactosa" },
+            
+            { nombre: "Combo 2x1", tipo: "ventana", id: "ventanaCombos" },
+            { nombre: "Combo Amigas", tipo: "ventana", id: "ventanaCombos" },
+            { nombre: "Combo Cumpleaños", tipo: "ventana", id: "ventanaCombos" },
+            { nombre: "Combo Familiar", tipo: "ventana", id: "ventanaCombos" },
+            
+            { nombre: "Quiénes Somos", tipo: "modal", seccion: "quienes" },
+            { nombre: "Horarios de atención", tipo: "modal", seccion: "horarios" },
+            { nombre: "Formas de Pago", tipo: "modal", seccion: "pagos" },
+            { nombre: "Ubicación", tipo: "modal", seccion: "ubicacion" },
+            { nombre: "Redes Sociales", tipo: "modal", seccion: "redes" },
+            { nombre: "Términos y Condiciones", tipo: "modal", seccion: "terminos" },
+            { nombre: "Derechos del Consumidor", tipo: "modal", seccion: "derechos" }
+        ];
+    
+        let coincidencias = items.filter(item => item.nombre.toLowerCase().includes(texto));
+    
+        if (coincidencias.length > 0) {
+            contenedorResultados.style.display = "block";
+            contenedorResultados.innerHTML = coincidencias.map(item => `
+                <div class="resultado-item" onclick="${item.tipo === 'ventana' ? `abrirVentana('${item.id}')` : `abrirModal('${item.seccion}')`}; limpiarBusqueda();">
+                    🔍 ${item.nombre}
+                </div>
+            `).join('');
+        } else {
+            contenedorResultados.style.display = "block";
+            contenedorResultados.innerHTML = `<div class="resultado-item">No se encontraron resultados para "${texto}"</div>`;
+        }
     }
-function cerrarCarrito(){ // Función que oculta la ventana del carrito
-document.getElementById("carrito").style.display="none"; // Cambia el display para ocultar el carrito
+    
+    function limpiarBusqueda() {
+        let input = document.getElementById("inputBusqueda");
+        let res = document.getElementById("resultadoBusqueda");
+        if (input) input.value = "";
+        if (res) res.style.display = "none";
+    }
+    
+    function abrirModalPersonalizar(idModal) {
+        let modal = document.getElementById(idModal);
+        if (modal) {
+            modal.style.display = "block";
+            activarCalculosModal();
+        }
+    }
+    
+    function cerrarModalPersonalizar(idModal) {
+        let modal = document.getElementById(idModal);
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    window.onclick = function(event) {
+        let modalCrepe = document.getElementById('modalCrepe');
+        let modalWaffle = document.getElementById('modalWaffle');
+        let modalInfo = document.getElementById('modal');
+        let carritoVentana = document.getElementById('carrito');
+    
+        if (event.target == modalCrepe) modalCrepe.style.display = "none";
+        if (event.target == modalWaffle) modalWaffle.style.display = "none";
+        if (event.target == modalInfo) modalInfo.style.display = "none";
+        if (event.target == carritoVentana) carritoVentana.style.display = "none";
+    }
+    
+    function activarCalculosModal() {
+        const ingredientesCrepeModal = document.querySelectorAll('.ingrediente-crepe-modal');
+        ingredientesCrepeModal.forEach(item => {
+            item.onchange = function() {
+                let total = 0;
+                ingredientesCrepeModal.forEach(i => {
+                    if(i.checked) total += Number(i.value);
+                });
+                let totalEl = document.getElementById("totalCrepeModal");
+                if (totalEl) totalEl.innerText = total;
+            };
+        });
+    
+        const ingredientesWaffleModal = document.querySelectorAll('.ingrediente-waffle-modal');
+        ingredientesWaffleModal.forEach(item => {
+            item.onchange = function() {
+                let total = 0;
+                ingredientesWaffleModal.forEach(i => {
+                    if(i.checked) total += Number(i.value);
+                });
+                let totalEl = document.getElementById("totalWaffleModal");
+                if (totalEl) totalEl.innerText = total;
+            };
+        });
+    }
+    
+    function crearPedidoCrepeModal() {
+        let ingredientes = [];
+        document.querySelectorAll('.ingrediente-crepe-modal:checked').forEach(item => {
+            ingredientes.push(item.parentElement.innerText.trim());
+        });
+        let base = document.querySelector('input[name="baseCrepeModal"]:checked');
+        let tipo = base ? base.parentElement.innerText.trim() : "Sin base elegida";
+        
+        let totalEl = document.getElementById("totalCrepeModal");
+        let total = totalEl ? Number(totalEl.innerText) : 0;
+    
+        if (total === 0) {
+            alert("Por favor selecciona al menos un ingrediente para tu Crepe.");
+            return;
+        }
+    
+        let nombreProducto = `Crepe Personalizado (${tipo}: ${ingredientes.join(', ')})`;
+        agregarCarrito(nombreProducto, total);
+        cerrarModalPersonalizar('modalCrepe');
+        alert("¡Tu crepe personalizado fue agregado al carrito!");
+    }
+    
+    function crearPedidoWaffleModal() {
+        let ingredientes = [];
+        document.querySelectorAll('.ingrediente-waffle-modal:checked').forEach(item => {
+            ingredientes.push(item.parentElement.innerText.trim());
+        });
+        let base = document.querySelector('input[name="baseWaffleModal"]:checked');
+        let tipo = base ? base.parentElement.innerText.trim() : "Sin base elegida";
+        
+        let totalEl = document.getElementById("totalWaffleModal");
+        let total = totalEl ? Number(totalEl.innerText) : 0;
+    
+        if (total === 0) {
+            alert("Por favor selecciona al menos un ingrediente para tu Waffle.");
+            return;
+        }
+    
+        let nombreProducto = `Waffle Personalizado (${tipo}: ${ingredientes.join(', ')})`;
+        agregarCarrito(nombreProducto, total);
+        cerrarModalPersonalizar('modalWaffle');
+        alert("¡Tu waffle personalizado fue agregado al carrito!");
+    }
+    
+    // Abrir y cerrar modal de Feedback
+    function abrirModalFeedback() {
+        let modal = document.getElementById("modalFeedback");
+        if (modal) modal.style.display = "block";
+    }
+    
+    function cerrarModalFeedback() {
+        let modal = document.getElementById("modalFeedback");
+        if (modal) modal.style.display = "none";
+    }
+    
+    // Función para enviar la valoración o la consulta por WhatsApp (Corregida y limpia)
+    function enviarFeedbackInstagram(tipo) {
+        let mensaje = "";
+    
+        if (tipo === 'valoracion') {
+            let opcionElegida = document.getElementById("calificacionEstrellas").value;
+            
+            let corazonLleno = "❤️"; 
+            let corazonRoto = "💔";
+            let textoCalificacion = "";
+    
+            if (opcionElegida.includes("5/5")) {
+                textoCalificacion = `${corazonLleno}${corazonLleno}${corazonLleno}${corazonLleno}${corazonLleno} (5/5) - Excelente`;
+            } else if (opcionElegida.includes("4/5")) {
+                textoCalificacion = `${corazonLleno}${corazonLleno}${corazonLleno}${corazonLleno} (4/5) - Muy buena`;
+            } else if (opcionElegida.includes("3/5")) {
+                textoCalificacion = `${corazonLleno}${corazonLleno}${corazonLleno} (3/5) - Regular`;
+            } else if (opcionElegida.includes("2/5")) {
+                textoCalificacion = `${corazonRoto}${corazonRoto} (2/5) - Mala`;
+            } else if (opcionElegida.includes("1/5")) {
+                textoCalificacion = `${corazonRoto} (1/5) - Muy mala`;
+            } else {
+                textoCalificacion = opcionElegida;
+            }
+    
+            let comentario = document.getElementById("comentarioCalificacion").value;
+            mensaje = `¡Hola Cremé! Mi valoración para la atención es: ${textoCalificacion}.${comentario ? '\nComentario: ' + comentario : ''}`;
+        } else if (tipo === 'consulta') {
+            let consulta = document.getElementById("textoConsulta").value;
+            if (!consulta.trim()) {
+                alert("Por favor escribí tu consulta antes de enviar.");
+                return;
+            }
+            mensaje = `¡Hola Cremé! Tengo la siguiente consulta/sugerencia: ${consulta}`;
+        }
+    
+        let linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+        window.open(linkWhatsApp, '_blank');
+        cerrarModalFeedback();
+    }
+    
+    // Mostrar el paso de formas de pago
+    function mostrarPasoPago() {
+        let total = document.getElementById("precio-total").innerText;
+        if (total === "0" || total === 0) {
+            alert("El carrito está vacío. Agregá algún producto primero.");
+            return;
+        }
+        document.getElementById("paso-productos").style.display = "none";
+        document.getElementById("paso-pago").style.display = "block";
+    }
+    
+    // Volver a la lista de productos
+    function volverAProductos() {
+        document.getElementById("paso-productos").style.display = "block";
+        document.getElementById("paso-pago").style.display = "none";
+    }
+    
+    // Cambiar recuadros de información de pagos
+    function cambiarMetodoPago() {
+        let opcion = document.querySelector('input[name="metodoPago"]:checked').value;
+        let boxEfectivo = document.getElementById("info-efectivo");
+        let boxTransferencia = document.getElementById("info-transferencia");
+        let boxTarjetas = document.getElementById("info-tarjetas");
+    
+        boxEfectivo.style.display = "none";
+        boxTransferencia.style.display = "none";
+        boxTarjetas.style.display = "none";
+    
+        if (opcion.includes("Efectivo")) {
+            boxEfectivo.style.display = "block";
+        } else if (opcion.includes("Transferencia")) {
+            boxTransferencia.style.display = "block";
+        } else if (opcion.includes("Tarjeta")) {
+            boxTarjetas.style.display = "block";
+        }
+    }
+    
+    // Enviar el pedido completo por WhatsApp
+    function enviarPedidoInstagram() {
+        if (typeof carrito === "undefined" || carrito.length === 0) {
+            alert("Tu carrito está vacío.");
+            return;
+        }
+    
+        let detalleProductos = "";
+        carrito.forEach(prod => {
+            detalleProductos += `• ${prod.nombre || prod.titulo} ($${prod.precio})\n`;
+        });
+    
+        let total = document.getElementById("precio-total").innerText;
+        let metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+        let notas = document.getElementById("notasPedido").value;
+    
+        if (metodoPago.includes("Tarjeta")) {
+            let subTarjeta = document.querySelector('input[name="subTipoTarjeta"]:checked').value;
+            metodoPago = `Tarjeta (${subTarjeta})`;
+        }
+    
+        let mensaje = `🍓 *NUEVO PEDIDO - CREMÉ* 🧇\n\n`;
+        mensaje += `*Detalle del pedido:*\n${detalleProductos}\n`;
+        mensaje += `💰 *Total a pagar:* $${total}\n`;
+        mensaje += `💳 *Método de pago:* ${metodoPago}\n`;
+    
+        if (metodoPago.includes("Transferencia")) {
+            mensaje += `✅ *Estado:* Transferencia realizada (Adjunto comprobante).\n`;
+        } else if (metodoPago.includes("Link de pago")) {
+            mensaje += `⏳ *Estado:* Solicito link de pago con tarjeta.\n`;
+        } else {
+            mensaje += `✅ *Estado:* Pago presencial en el local.\n`;
+        }
+    
+        if (notas.trim()) {
+            mensaje += `📝 *Aclaraciones:* ${notas}\n`;
+        }
+    
+        let linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+        window.open(linkWhatsApp, '_blank');
+    
+        volverAProductos();
+        cerrarCarrito();
     }
 </script>
 
-<!-- CARRITO --> <!-- Contenedor principal del carrito de compras -->
-<div id="carrito" class="carrito"> <!-- Ventana del carrito que se mostrará cuando el usuario haga clic en el ícono del carrito -->
-    <div class="carrito-contenido"> <!-- Caja interna que contiene toda la información del carrito -->
-    <span class="cerrar-carrito" onclick="cerrarCarrito()">×</span> <!-- Botón para cerrar el carrito cuando el usuario haga clic -->
-    <h2>Mi Pedido</h2> <!-- Título principal del carrito -->
-    <div id="lista-carrito"></div> <!-- Espacio donde JavaScript mostrará dinámicamente los productos agregados -->
-    <hr> <!-- Línea divisoria para separar los productos del resumen de la compra -->
-    <p>
-        <strong>Productos:</strong>
-        <span id="cantidad-total">0</span>
-    </p> <!-- Muestra la cantidad total de productos agregados al carrito -->
-    <p>
-        <strong>Total:</strong>
-        $<span id="precio-total">0</span>
-    </p> <!-- Muestra el precio total acumulado de la compra -->
-    </div> <!-- Fin del contenido interno del carrito -->
-    </div><!-- Fin de la ventana del carrito -->
-
-    <script>
-    const ingredientesCrepe =
-    document.querySelectorAll('.ingrediente-crepe'); // Selecciona todos los ingredientes del crepe que tienen la clase "ingrediente-crepe"
-        ingredientesCrepe.forEach(item => {// Recorre cada uno de los ingredientes encontrados
-        item.addEventListener('change', calcularCrepe);// Ejecuta la función calcularCrepe cada vez que se marca o desmarca un ingrediente
-        });
-        function calcularCrepe(){// Función encargada de calcular el precio total del crepe personalizado
-        let total = 0;// Variable donde se acumulará el precio total
-        ingredientesCrepe.forEach(item => {// Recorre nuevamente todos los ingredientes
-        if(item.checked){ // Verifica si el ingrediente fue seleccionado
-        total += Number(item.value);// Convierte el valor del ingrediente a número y lo suma al total
-        } });
-        document.getElementById("totalCrepe").innerText = total;// Muestra el total calculado en la sección de precio estimado
-        }
-        function crearPedidoCrepe(){ // Función que genera el resumen del pedido personalizado
-        let ingredientes = [];// Arreglo donde se almacenarán los ingredientes seleccionados
-        document
-        .querySelectorAll('.ingrediente-crepe:checked') // Selecciona únicamente los ingredientes que fueron marcados
-        .forEach(item => {
-        ingredientes.push(
-            item.parentElement.innerText// Guarda el nombre del ingrediente dentro del arreglo
-                ); });
-        let base =
-            document.querySelector('input[name="baseCrepe"]:checked');// Obtiene el tipo de crepe seleccionado (dulce o salado)
-        let tipo =
-        base ? base.parentElement.innerText :
-        "No seleccionó base";// Si existe una base seleccionada la guarda, de lo contrario muestra un mensaje
-        let total =
-        document.getElementById("totalCrepe").innerText;// Obtiene el total calculado previamente
-        document.getElementById("resumenCrepe").innerHTML = `
-                <div class="pedido-final">
-                    <!-- Caja donde se mostrará el resumen final -->
-                    <h3>✅ Pedido Personalizado</h3>
-                    <!-- Título del resumen -->
-                    <p><strong>Tipo:</strong> ${tipo}</p>
-                    <!-- Muestra el tipo de crepe seleccionado -->
-                    <p><strong>Ingredientes:</strong></p>
-                    <!-- Encabezado de la lista de ingredientes -->
-                    <ul>
-                        ${ingredientes.map(i => `<li>${i}</li>`).join('')}
-                    </ul>
-                    <!-- Genera automáticamente una lista con los ingredientes seleccionados -->
-                    <p><strong>Total estimado:</strong> $${total}</p>
-                    <!-- Muestra el precio total del pedido personalizado -->
-                </div>
-            `;// Inserta todo el resumen generado dentro del contenedor resumenCrepe
-        }
-        </script>
-
-        <script>
-        const ingredientesWaffle =
-            document.querySelectorAll('.ingrediente-waffle');
-            ingredientesWaffle.forEach(item => {
-                item.addEventListener('change', calcularWaffle);
-            });
-            function calcularWaffle(){
-                let total = 0;
-                ingredientesWaffle.forEach(item => {
-                    if(item.checked){
-                        total += Number(item.value);
-                    }
-                });
-                document.getElementById("totalWaffle").innerText = total;
-            }
-            function crearPedidoWaffle(){
-                let ingredientes = [];
-                document
-                .querySelectorAll('.ingrediente-waffle:checked')
-                .forEach(item => {
-                    ingredientes.push(
-                        item.parentElement.innerText
-                    );
-                });
-                let base =
-                document.querySelector('input[name="baseWaffle"]:checked');
-                let tipo =
-                base ? base.parentElement.innerText :
-                "No seleccionó base";
-                let total =
-                document.getElementById("totalWaffle").innerText;
-                document.getElementById("resumenWaffle").innerHTML = `
-                    <div class="pedido-final">
-                        <h3>✅ Pedido Personalizado</h3>
-                        <p><strong>Tipo:</strong> ${tipo}</p>
-                        <p><strong>Ingredientes:</strong></p>
-                        <ul>
-                            ${ingredientes.map(i => `<li>${i}</li>`).join('')}
-                        </ul>
-                        <p><strong>Total estimado:</strong> $${total}</p>
-                    </div>
-                `;
-            }</script>  
 </body>
-
-<div id="carrito-btn" onclick="abrirCarrito()"> <!-- Botón flotante del carrito que permite abrir la ventana del carrito al hacer clic -->
-    🛒 <span id="contador">0</span> <!-- Muestra el ícono del carrito y la cantidad de productos agregados -->
-    </div><!-- Fin del botón del carrito -->
-    </html><!-- Indica el final del documento HTML -->
+</html>

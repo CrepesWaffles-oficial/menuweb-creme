@@ -8,7 +8,20 @@
     body{
     background:#f7f2ea;
     }
+    body {
+        /* Mantenemos el velo translúcido suave sobre la imagen */
+        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('unprefondomas2.jpg');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        
+        /* Mantiene el tamaño normal y grandecito original de los dibujos */
+        background-size: auto; 
     
+        background-color: #FAF6F0;
+        margin: 0;
+        font-family: 'Playfair Display', serif, Arial, sans-serif;
+        color: #4E342E;
+    }
     /* PORTADA */
     
     .hero{
@@ -575,4 +588,521 @@
     padding:15px;
     border-radius:15px;
     border-left:5px solid #8B5E3C;
+}
+
+/* ===== CUADROS PRINCIPALES DE CREME ===== */
+
+.home-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 180px;
+    padding: 25px 15px;
+
+    background-color: #fdd4a8;
+    border: 1px solid #fdd9b9;
+    border-radius: 18px;
+
+    color: #4E342E;
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow: 0 4px 12px rgba(78, 52, 46, 0.08);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+
+    box-sizing: border-box;
+    background-color: #F5E9DC;
+border: 2px solid #8B5E3C;
+}
+
+/* VENTANA FLOTANTE DE CREPES */
+.modal-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(35, 25, 20, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.modal-contenido {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #F5E9DC;
+    border: 2px solid #8B5E3C;
+    border-radius: 20px;
+    color: #4E342E;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.modal-contenido h2 {
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #4E342E;
+}
+
+.subtitulo-modal {
+    text-align: center;
+    color: #8B5E3C;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: #4E342E;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.pestanas-crepes {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.pestana-crepe {
+    flex: 1;
+    padding: 12px 8px;
+    border: 1px solid #8B5E3C;
+    border-radius: 10px;
+    background: #E8D5C4;
+    color: #4E342E;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pestana-crepe.activa {
+    background: #4E342E;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .modal-contenido {
+        padding: 25px 15px;
+        max-height: 90vh;
+    }
+
+    .pestanas-crepes {
+        gap: 6px;
+    }
+
+    .pestana-crepe {
+        font-size: 13px;
+    }
+}
+
+
+
+
+.home-category-card:hover {
+    transform: translateY(-4px);
+    background-color: #E8D5C4;
+    border-color: #4E342E;
+    box-shadow: 0 8px 18px rgba(78, 52, 46, 0.18);
+}
+
+
+.home-category-card .category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.home-category-card h2 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #4E342E;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 480px) {
+    .home-categories {
+        gap: 12px;
+        padding: 12px;
+        margin: 25px auto;
+    }
+
+    .home-category-card {
+        min-height: 145px;
+        padding: 18px 8px;
+        border-radius: 14px;
+    }
+
+    .home-category-card .category-icon {
+        font-size: 30px;
+    }
+
+    .home-category-card h2 {
+        font-size: 17px;
+    }
+}
+/* Estilos para la barra de búsqueda */
+.search-container-section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 20px auto 30px auto; /* Modificamos esto para que baje y tenga más distancia de la portada */
+    z-index: 100;
+    width: 90%;
+    max-width: 600px;
+}
+
+.search-bar-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8c6a4d; /* Borde marrón oscuro */
+}
+
+.search-bar-box .search-icon {
+    color: #8c6a4d; /* Lupita de color marrón */
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.search-bar-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+}
+
+.search-bar-box input::placeholder {
+    color: #b5a496; /* Texto translúcido/suave */
+    font-style: italic;
+}
+
+/* Lista flotante de resultados */
+.resultado-busqueda-flotante {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-top: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.resultado-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f9f4f1;
+    font-size: 15px;
+    color: #444;
+}
+
+.resultado-item:hover {
+    background: #fdfbf9;
+    color: #8c6a4d;
+    font-weight: bold;
+}
+/* Tarjetas de personalización rectangulares */
+.personalizar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.card-personalizar {
+    background-color: #F5E9DC;
+    border: 2px solid #8B5E3C;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(78, 52, 46, 0.08);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.card-personalizar:hover {
+    transform: translateY(-3px);
+    background-color: #ebdcd0;
+}
+
+.card-personalizar h3 {
+    margin: 5px 0;
+    color: #4E342E;
+    font-size: 1.3rem;
+}
+
+.card-personalizar p {
+    margin: 0;
+    color: #6D4C41;
+    font-size: 0.95rem;
+}
+
+.emoji-personalizar {
+    font-size: 2rem;
+}
+
+/* Modales / Ventanas emergentes */
+.modal-personalizar {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(4px); /* Efecto de desenfoque elegante */
+}
+
+.modal-contenido-personalizar {
+    background-color: #FAF6F0;
+    margin: 8% auto;
+    padding: 25px;
+    border: 2px solid #8B5E3C;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    color: #4E342E;
+}
+
+.cerrar-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #8B5E3C;
+    cursor: pointer;
+}
+
+.btn-agregar-carrito {
+    background-color: #8B5E3C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #6D4C41;
+}
+/* Ordenar las opciones de los modales de personalización uno debajo de otro */
+.opciones-personalizar label {
+    display: block; /* Fuerza a que cada opción ocupe su propia línea */
+    margin-bottom: 8px; /* Deja un pequeño espacio entre cada ingrediente */
+    cursor: pointer;
+}
+
+/* Si querés que las bases (Dulce y Salado) queden una al lado de la otra */
+.opciones-personalizar input[type="radio"] + label,
+.opciones-personalizar label:has(input[type="radio"]) {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Forzamos específicamente que los checkboxes de ingredientes vayan uno debajo de otro */
+.opciones-personalizar input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.opciones-personalizar input[type="checkbox"] ~ input[type="checkbox"] {
+    display: block;
+}
+/* Botón flotante de mensajes ubicado a la derecha del carrito */
+#mensaje-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* Se ubica al lado izquierdo del botón de carrito */
+    background: #8c6a4d;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 4000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#mensaje-btn:hover {
+    transform: scale(1.1);
+    background: #6D4C41;
+}
+
+.caja-opcion-feedback {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e5d5c5;
+}
+
+.caja-opcion-feedback h3 {
+    margin-top: 0;
+    color: #4E342E;
+    font-size: 1.1rem;
+}
+
+
+
+/* ==========================================
+   BOTONES FLOTANTES INFERIORES (ESQUINA DERECHA)
+   ========================================== */
+
+/* El Carrito ahora se desplaza a la izquierda */
+#carrito-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 85px; /* Se mueve hacia la izquierda */
+    background: #8c6a4d;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 4000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#carrito-btn:hover {
+    transform: scale(1.05);
+}
+
+/* El Botón de Mensaje queda a la derecha del todo */
+#mensaje-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Pegado a la esquina derecha */
+    background: #8c6a4d;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 4000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#mensaje-btn:hover {
+    transform: scale(1.1);
+    background: #6D4C41;
+}
+
+/* ==========================================
+AJUSTE DE CENTRADO DEL MODAL DE MENSAJES
+   ========================================== */
+
+.modal-contenido-personalizar {
+    background-color: #FAF6F0;
+    position: relative;
+    
+    /* Centrado vertical y horizontal exacto en la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0; 
+    
+    padding: 25px;
+    border: 2px solid #8B5E3C;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 480px;
+    
+    /* Evita que se salga de pantalla y permite hacer scroll adentro */
+    max-height: 85vh;
+    overflow-y: auto;
+    
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    color: #4E342E;
+    box-sizing: border-box;
+}
+.carrito-contenido {
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 20px;
+}/* Asegura que las ventanas de modal siempre queden POR ENCIMA del carrito */
+.modal {
+    z-index: 9999 !important; /* Capa superior máxima */
+    padding-top: 50px;
+}
+
+/* Formato y recuadro scrolleable para el modal de información */
+.contenido-modal {
+    max-width: 550px;
+    max-height: 75vh;          /* Altura máxima del 75% de la pantalla */
+    overflow-y: auto;          /* Permite hacer scroll interno si el texto es largo */
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;         /* Tamaño de letra levemente más estilizado y compacto */
+    line-height: 1.5;
+}
+
+/* Botón de cerrar modal bien visible */
+.cerrar-modal {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4E342E;
+    cursor: pointer;
 }
